@@ -1,22 +1,10 @@
 pipeline {
-  agent {
-    docker 'golang:1.9.2-alpine'
-  }
+  agent any
   stages {
-    stage('Checkout from GitHub') {
-        steps {
-            checkout scm
-        }
-    }
-    stage('Print version') {
+    stage('build base image') {
       steps {
-        sh 'go version'
+        sh 'make build-base'
       }
-    }
-    stage('Test') {
-        steps {
-            sh 'go test'
-        }
     }
   }
 }
