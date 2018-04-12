@@ -13,15 +13,15 @@ pipeline {
         sh 'go version'
       }
     }
-    stage('Shell script') {
-      steps {
-        sh 'test'
-      }
-    }
     stage('Test') {
         steps {
             sh 'go test'
         }
+    }
+    stage('Build') {
+      steps {
+        sh 'go build main.go'
+      }
     }
   }
 }
