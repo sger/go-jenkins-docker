@@ -4,7 +4,9 @@ pipeline {
   }
   stages {
     stage('Checkout from GitHub') {
-        checkout scm
+        steps {
+            checkout scm
+        }
     }
     stage('Print version') {
       steps {
