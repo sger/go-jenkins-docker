@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Shell script') {
       steps {
-        sh 'test.sh'
+        sh 'test'
       }
     }
     stage('Test') {
