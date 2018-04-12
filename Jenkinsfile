@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker 'golang:1.8.0-alpine'
+    docker 'golang:1.9.2-alpine'
   }
   stages {
     stage('Checkout from GitHub') {
@@ -12,6 +12,11 @@ pipeline {
       steps {
         sh 'go version'
       }
+    }
+    stage('Test') {
+        steps {
+            sh 'go test'
+        }
     }
   }
 }
