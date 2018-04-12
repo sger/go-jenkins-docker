@@ -13,12 +13,14 @@ pipeline {
         sh 'go version'
       }
     }
+    stage('Shell script') {
+      steps {
+        sh 'test.sh'
+      }
+    }
     stage('Test') {
         steps {
             sh 'go test'
-            sh 'cd workspace/Test_CI'
-            sh 'ls -la'
-            sh './test.sh'
         }
     }
   }
