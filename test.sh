@@ -1,4 +1,3 @@
-#!bin/bash
+#!/bin/bash
 
-docker run --rm -it \
-		go run main.go
+go run main.go
