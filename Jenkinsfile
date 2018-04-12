@@ -16,7 +16,7 @@ pipeline {
     stage('Test') {
         steps {
             sh 'go test'
-            sh 'cd var/jenkins_home/workspace/Test_CI'
+            sh 'cd workspace/Test_CI'
             sh 'ls -la'
             sh './test.sh'
         }
